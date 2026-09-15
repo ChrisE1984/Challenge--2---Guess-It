@@ -1,0 +1,14 @@
+C:\Users\cestr\Desktop\Homework\Challenge #2 - Guess It\obj\Debug\net10.0\Challenge #2 - Guess It.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cestr\Desktop\Homework\Challenge #2 - Guess It\obj\Debug\net10.0\Challenge #2 - Guess It.AssemblyInfoInputs.cache
+C:\Users\cestr\Desktop\Homework\Challenge #2 - Guess It\obj\Debug\net10.0\Challenge #2 - Guess It.AssemblyInfo.cs
+C:\Users\cestr\Desktop\Homework\Challenge #2 - Guess It\obj\Debug\net10.0\Challenge #2 - Guess It.csproj.CoreCompileInputs.cache
+C:\Users\cestr\Desktop\Homework\Challenge #2 - Guess It\bin\Debug\net10.0\Challenge #2 - Guess It.exe
+C:\Users\cestr\Desktop\Homework\Challenge #2 - Guess It\bin\Debug\net10.0\Challenge #2 - Guess It.deps.json
+C:\Users\cestr\Desktop\Homework\Challenge #2 - Guess It\bin\Debug\net10.0\Challenge #2 - Guess It.runtimeconfig.json
+C:\Users\cestr\Desktop\Homework\Challenge #2 - Guess It\bin\Debug\net10.0\Challenge #2 - Guess It.dll
+C:\Users\cestr\Desktop\Homework\Challenge #2 - Guess It\bin\Debug\net10.0\Challenge #2 - Guess It.pdb
+C:\Users\cestr\Desktop\Homework\Challenge #2 - Guess It\obj\Debug\net10.0\Challenge #2 - Guess It.dll
+C:\Users\cestr\Desktop\Homework\Challenge #2 - Guess It\obj\Debug\net10.0\refint\Challenge #2 - Guess It.dll
+C:\Users\cestr\Desktop\Homework\Challenge #2 - Guess It\obj\Debug\net10.0\Challenge #2 - Guess It.pdb
+C:\Users\cestr\Desktop\Homework\Challenge #2 - Guess It\obj\Debug\net10.0\Challenge #2 - Guess It.genruntimeconfig.cache
+C:\Users\cestr\Desktop\Homework\Challenge #2 - Guess It\obj\Debug\net10.0\ref\Challenge #2 - Guess It.dll
