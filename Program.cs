@@ -1,11 +1,18 @@
 ﻿
-
-using System.Xml;
+//Chris Estrada
+//9-16-26
+//Assignment Challenge 2- Guess it!
+//What you did- wrote a program that asks the user to choose a difficulty setting and follow the
+// game logic until the end guessing the secret number within the set difficulty's parameters. Validation checks were added to make sure
+// each input is a valid number, that it was in the parameters, and kik out a message if the user tries to input anything else
+// Finally the game asks if you want to play again.
+//Peer Review:
+//Review:
 
 Console.Clear();
 
 string continuePlaying = "";
-while (continuePlaying != "n")
+while (continuePlaying != "n")// encompasses entire game to start back here once user enters "y" to play again
 {
     Console.WriteLine("Welcome to Guess it, the game where you have to guess the correct number.");
     Console.WriteLine("The difficulty modes are:");
@@ -19,7 +26,7 @@ while (continuePlaying != "n")
 
     int difficulty;
 
-    bool success = int.TryParse(chooseDifficulty, out difficulty);
+    bool success = int.TryParse(chooseDifficulty, out difficulty);// start of switch to pick between multiple difficulty settings
 
     if (success)
     {
@@ -52,7 +59,7 @@ while (continuePlaying != "n")
 
     }
 
-    if (difficulty >= 1 && difficulty <= 4)
+    if (difficulty >= 1 && difficulty <= 4)// validation to make sure 1-4 is selected to continue
     {
 
         if (chooseDifficulty == "1")
@@ -62,14 +69,14 @@ while (continuePlaying != "n")
 
             int easyMin = 1;
             int easyMax = 11;
-            int easyRandomOne = rndEasy.Next(easyMin, easyMax);
+            int easyRandomOne = rndEasy.Next(easyMin, easyMax);//random number generator for this difficulty
             int attemptsEasy = 0;
             int easy;
 
             do
             {
 
-                bool validEasyInput = false;
+                bool validEasyInput = false;// int validator boolean to loop until player enters a number between parameters
 
                 do
                 {
@@ -88,7 +95,7 @@ while (continuePlaying != "n")
                 } while (validEasyInput == false);
                 attemptsEasy++;
 
-                if (easy > 10 || easy < 1)
+                if (easy > 10 || easy < 1)// game code to show it the user entered a number in the parameter and if right or not
                 {
                     Console.WriteLine("You did not enter a number between 1-10, Please try again");
                 }
@@ -116,7 +123,7 @@ while (continuePlaying != "n")
 
             int mediumMin = 1;
             int mediumMax = 51;
-            int mediumRandomOne = rndMedium.Next(mediumMin, mediumMax);
+            int mediumRandomOne = rndMedium.Next(mediumMin, mediumMax);//random number generator for this difficulty
             int attemptsMedium = 0;
             int medium;
 
@@ -124,7 +131,7 @@ while (continuePlaying != "n")
             {
 
 
-                bool validMediumInput = false;
+                bool validMediumInput = false;// int validator boolean to loop until player enters a number between parameters
 
                 do
                 {
@@ -143,7 +150,7 @@ while (continuePlaying != "n")
                 } while (validMediumInput == false);
                 attemptsMedium++;
 
-                if (medium > 50 || medium < 1)
+                if (medium > 50 || medium < 1)// game code to show it the user entered a number in the parameter and if right or not
                 {
                     Console.WriteLine("You did not enter a number between 1-50, Please try again");
                 }
@@ -172,13 +179,13 @@ while (continuePlaying != "n")
 
             int hardMin = 1;
             int hardMax = 101;
-            int hardRandomOne = rndHard.Next(hardMin, hardMax);
+            int hardRandomOne = rndHard.Next(hardMin, hardMax);//random number generator for this difficulty
             int attemptsHard = 0;
             int hard;
 
             do
             {
-                bool validHardInput = false;
+                bool validHardInput = false;// int validator boolean to loop until player enters a number between parameters
 
                 do
                 {
@@ -197,7 +204,7 @@ while (continuePlaying != "n")
                 } while (validHardInput == false);
                 attemptsHard++;
 
-                if (hard > 100 || hard < 1)
+                if (hard > 100 || hard < 1)// game code to show it the user entered a number in the parameter and if right or not
                 {
                     Console.WriteLine("You did not enter a number between 1-100, Please try again");
                 }
@@ -262,7 +269,7 @@ while (continuePlaying != "n")
                     
                 }
             }while (validCustomNumberOne == false);
-            
+
             Random rndCustom = new Random();
 
             int customMin = customNum;
@@ -274,7 +281,7 @@ while (continuePlaying != "n")
             do
             {
 
-                bool validCustomInput = false;
+                bool validCustomInput = false;// int validator boolean to loop until player enters a number between parameters
                 do
                 {
                     Console.Write($"You will need to guess a number between {customNum}-{customNumOne}. Please enter your guess:");
@@ -292,7 +299,7 @@ while (continuePlaying != "n")
                 } while (!validCustomInput);
                 attemptsCustom++;
 
-                if (trueGuess > customNumOne || trueGuess < customNum)
+                if (trueGuess > customNumOne || trueGuess < customNum)// game code to show it the user entered a number in the parameter and if right or not
                 {
                     Console.WriteLine($"You did not enter a number between {customNum}-{customNumOne}, Please try again");
                 }
@@ -327,7 +334,7 @@ while (continuePlaying != "n")
 
         do
         {
-            Console.Write("Would you like to play again? (Y/N): ");
+            Console.Write("Would you like to play again? (Y/N): ");// code to prompt player to continue
             continuePlaying = Console.ReadLine().ToLower();
 
             if (continuePlaying != "y" && continuePlaying != "n")
