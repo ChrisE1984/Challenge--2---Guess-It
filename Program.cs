@@ -48,129 +48,153 @@ while (continuePlaying != "n")
     }
 
     if (chooseDifficulty == "1")
-    {
-        Console.Write("Please enter a Number between 1-10:");
-        string easyNumber=Console.ReadLine();
-        int attemptsEasy = 0;
-        int easy = int.Parse(easyNumber);
-        Random rnd = new Random();
+
+    {   Random rndEasy = new Random();
 
         int easyMin = 1;
-        int easyMax = 10;
-        int easyRandomOne = rnd.Next(easyMin, easyMax);
+        int easyMax = 11;
+        int easyRandomOne = rndEasy.Next(easyMin, easyMax);
+        int attemptsEasy = 0;
+        int easy;
+
+       do{
+
+        Console.Write("Please enter a Number between 1-10:");
+        string easyNumber=Console.ReadLine();
+        easy = int.Parse(easyNumber);
+        attemptsEasy++;
         
         if (easy == easyRandomOne)
         {
             Console.WriteLine($"Congratulations, you guessed right in {attemptsEasy} tries!");
-            attemptsEasy += 1
+            
         }
-        if (easy < easyRandomOne)
+        else if (easy < easyRandomOne)
         {
             Console.WriteLine("Not quite, the true number is higher");
-            attemptsEasy += 1;
+            
         }
-        if (easy > easyRandomOne)
+        else 
            {
             Console.WriteLine("Not quite, the true number is lower");
-            attemptsEasy += 1;
+            
         }
+    }while (easy != easyRandomOne);
+    }
         
     if (chooseDifficulty == "2")
     {
-        Console.Write("Please enter a Number between 1-50:");
-        string mediumNumber=Console.ReadLine();
-        int attemptsMedium = 0;
-        int medium = int.Parse(mediumNumber);
-        Random rnd = new Random();
+        Random rndMedium = new Random();
 
         int mediumMin = 1;
-        int mediumMax = 50;
-        int mediumRandomOne = rnd.Next(mediumMin, mediumMax);
-        
+        int mediumMax = 51;
+        int mediumRandomOne = rndMedium.Next(mediumMin, mediumMax);
+        int attemptsMedium = 0;
+        int medium;
+
+        do{
+
+        Console.Write("Please enter a Number between 1-50:");
+        string mediumNumber=Console.ReadLine();
+        medium = int.Parse(mediumNumber);
+        attemptsMedium ++;
+
         if (medium == mediumRandomOne)
         {
             Console.WriteLine($"Congratulations, you guessed right in {attemptsMedium} tries!");
-            attemptsMedium += 1
-        }
-        if (medium < mediumRandomOne)
+            }
+            
+        else if (medium < mediumRandomOne)
         {
             Console.WriteLine("Not quite, the true number is higher");
-            attemptsMedium += 1;
+            
         }
-        if (medium > mediumRandomOne)
+        else 
            {
             Console.WriteLine("Not quite, the true number is lower");
-            attemptsMedium += 1;
+            
         }
+        }while (medium != mediumRandomOne);
     }
     if (chooseDifficulty == "3")
     {
-        Console.Write("Please enter a Number between 1-100:");
-        string hardNumber =Console.ReadLine();
-        int attemptsHard = 0;
-        int hard = int.Parse(hardNumber);
-        Random rnd = new Random();
+
+        Random rndHard = new Random();
 
         int hardMin = 1;
-        int hardMax = 100;
-        int hardRandomOne = rnd.Next(hardMin, hardMax);
+        int hardMax = 101;
+        int hardRandomOne = rndHard.Next(hardMin, hardMax);
+        int attemptsHard = 0;
+        int hard;
+
+        do{
+
+        Console.Write("Please enter a Number between 1-100:");
+        string hardNumber =Console.ReadLine();
+        hard = int.Parse(hardNumber);
+        attemptsHard++;
         
         if (hard == hardRandomOne)
         {
             Console.WriteLine($"Congratulations, you guessed right in {attemptsHard} tries!");
-            attemptsHard += 1
+            
         }
-        if (hard < hardRandomOne)
+        else if (hard < hardRandomOne)
         {
             Console.WriteLine("Not quite, the true number is higher");
-            attemptsHard += 1;
+            
         }
-        if (hard > hardRandomOne)
+        else 
            {
             Console.WriteLine("Not quite, the true number is lower");
-            attemptsHard += 1;
+           
         }
 
+    }while (hard != hardRandomOne);
     }
-
     if (chooseDifficulty == "4")
     {
         Console.Write("Please enter a Number of your choice for the lowest number:");
-        string customNumber =Console.ReadLine();
+        string customNumber = Console.ReadLine();
         int customNum = int.Parse (customNumber);
 
         Console.Write("Please enter a Number of your choice for the largest number:");
-        string customNumberOne =Console.ReadLine();
+        string customNumberOne = Console.ReadLine();
         int customNumOne = int.Parse (customNumberOne);
-        int attemptsCustom = 0;
 
-        Console.WriteLine($"You will need to guess a number between {customNum} and {customNumOne}. Please enter your guess");
-        string customGuess = Console.ReadLine();
-        int trueCustomGuess = int.Parse (customGuess);
-    
-        Random rnd = new Random();
+        Random rndCustom = new Random();
 
         int customMin = customNum;
         int customMax = customNumOne;
-        int customRandomOne = rnd.Next(customMin, customMax);
-        
-        if (trueCustomGuess == customRandomOne)
+        int customRandomOne = rndCustom.Next(customMin, customMax);
+        int attemptsCustom = 0;
+        int trueGuess;
+
+        do
+        {
+
+        Console.WriteLine($"You will need to guess a number between {customNum} and {customNumOne}. Please enter your guess");
+        string customGuess = Console.ReadLine();
+        trueGuess = int.Parse (customGuess);
+        attemptsCustom++;
+
+        if (trueGuess == customRandomOne)
         {
             Console.WriteLine($"Congratulations, you guessed right in {attemptsCustom} tries!");
-            attemptsCustom += 1
+            
         }
-        if (trueCustomGuess < customRandomOne)
+        else if (trueGuess < customRandomOne)
         {
             Console.WriteLine("Not quite, the true number is higher");
-            attemptsCustom += 1;
+            
         }
-        if (trueCustomGuess > customRandomOne)
+        else 
            {
             Console.WriteLine("Not quite, the true number is lower");
-            attemptsCustom += 1;
+            
         }
 
-    }
+    }while (trueGuess != customRandomOne);  
 
 
 
@@ -192,3 +216,6 @@ while (continuePlaying != "n")
 
 }
 }
+
+
+
