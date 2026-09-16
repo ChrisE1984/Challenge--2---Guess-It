@@ -135,7 +135,7 @@ while (continuePlaying != "n")// encompasses entire game to start back here once
 
                 do
                 {
-                    Console.WriteLine("Please enter a number between 1-10:");
+                    Console.WriteLine("Please enter a number between 1-50:");
                     string mediumNumber = Console.ReadLine();
 
                     if (int.TryParse(mediumNumber, out medium))
