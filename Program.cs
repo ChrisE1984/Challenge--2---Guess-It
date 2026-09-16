@@ -6,8 +6,8 @@
 // game logic until the end guessing the secret number within the set difficulty's parameters. Validation checks were added to make sure
 // each input is a valid number, that it was in the parameters, and kik out a message if the user tries to input anything else
 // Finally the game asks if you want to play again.
-//Peer Review:
-//Review:
+//Peer Review: Valery Lot
+//Review: Code works as intended. However, Medium mode still prompts users to enter a number between 1-10. Had validation on all parts and asked used to play again. 
 
 Console.Clear();
 
