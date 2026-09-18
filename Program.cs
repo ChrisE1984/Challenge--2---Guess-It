@@ -11,83 +11,43 @@
 
 Console.Clear();
 
-string continuePlaying = "";
-while (continuePlaying != "n")// encompasses entire game to start back here once user enters "y" to play again
+
+
+GuessingGame game = new GuessingGame(); 
+string continuePlaying= "";
+while (continuePlaying != "n"){
+game.StartGame();
+
+if (game.difficulty >= 1 && game.difficulty <= 4)
 {
-    Console.WriteLine("Welcome to Guess it, the game where you have to guess the correct number.");
-    Console.WriteLine("The difficulty modes are:");
-    Console.WriteLine("1. Easy (Numbers to guess are between 1-10)");
-    Console.WriteLine("2. Medium (Numbers to guess are between 1-50)");
-    Console.WriteLine("3. Hard (Numbers to guess are between 1-100)");
-    Console.WriteLine("4. Custom (Numbers to guess are between two numbers of your choosing)");
-    Console.Write("Please choose a difficulty mode (1-4):");
-
-    string chooseDifficulty = Console.ReadLine();
-
-    int difficulty;
-
-    bool success = int.TryParse(chooseDifficulty, out difficulty);// start of switch to pick between multiple difficulty settings
-
-    if (success)
-    {
-        switch (difficulty)
-        {
-            case 1:
-                Console.WriteLine("Easy Difficulty, have fun!");
-                break;
-            case 2:
-                Console.WriteLine("Medium Difficulty, good luck!");
-                break;
-            case 3:
-                Console.WriteLine("Hard Difficulty, you're crazy for this one");
-                break;
-            case 4:
-                Console.WriteLine("Custom Difficulty, you do you!");
-                break;
-            default:
-
-                Console.WriteLine("That was not a valid selection");
-
-                break;
-
-        }
-    }
-
-    else
-    {
-        Console.WriteLine("Please enter a number between 1-4.");
-
-    }
-
-    if (difficulty >= 1 && difficulty <= 4)// validation to make sure 1-4 is selected to continue
-    {
-
-        if (chooseDifficulty == "1")
+            if (game.difficulty == 1)
 
         {
-            GuessIt.PlayEasyGame();
+           GuessingGame.PlayEasyGame();
         }
 
-        if (chooseDifficulty == "2")
-
+        if (game.difficulty == 2)
+        
         {
-            GuessIt.PlayMediumGame();
+            GuessingGame.PlayMediumGame();
         }
 
-        if (chooseDifficulty == "3")
-
+        if (game.difficulty == 3)
+        
         {
-            GuessIt.PlayHardGame();
+            GuessingGame.PlayHardGame();
         }
 
 
-        if (chooseDifficulty == "4")
+        if (game.difficulty == 4)
         {
+         
+         GuessingGame.PlayCustomGame();
+}
 
-            GuessIt.PlayCustomGame();
-        }
+}
 
-        do
+ do
         {
             Console.Write("Would you like to play again? (Y/N): ");// code to prompt player to continue
             continuePlaying = Console.ReadLine().ToLower();
@@ -98,7 +58,4 @@ while (continuePlaying != "n")// encompasses entire game to start back here once
             }
 
         } while (continuePlaying != "y" && continuePlaying != "n");
-    }
 }
-
-
